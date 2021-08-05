@@ -85,6 +85,7 @@ e ::= t:item1 ep:item2 {:ArrayList<String> lista1 = item1;
                     lista1.add(lista2.get(index));
                 }
                 finalList = lista1;
+                RESULT = lista1;
                 :}
     ;
 
@@ -130,7 +131,7 @@ tp ::= MULT f:item1 tp:item2 {:
     ;
 
 f ::= ID:id {:
-            System.out.print(Integer.parseInt(id.toString())+" ");
+            System.out.print(id.toString()+" ");
             ArrayList<String> items = new ArrayList();
             items.add(id.toString());
             
