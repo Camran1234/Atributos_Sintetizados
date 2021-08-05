@@ -149,8 +149,8 @@ public class Lexico implements java_cup.runtime.Scanner {
 
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\2\3\1\4\1\2\1\5\1\6\1\7\1\10"+
-    "\1\11\1\12\15\0\1\3\21\0\1\11\5\0\3\13"+
-    "\2\0\2\13";
+    "\1\11\1\12\15\0\1\3\21\0\1\11\5\0\1\13"+
+    "\4\0\2\13";
 
   private static int [] zzUnpackTrans() {
     int [] result = new int[55];
@@ -719,13 +719,13 @@ public class Lexico implements java_cup.runtime.Scanner {
             // fall through
           case 14: break;
           case 7:
-            { System.out.println("Number");
+            { System.out.println("Number "+yytext());
             return new Symbol(NUMBER, yyline + 1, yycolumn +1, yytext());
             }
             // fall through
           case 15: break;
           case 8:
-            { System.out.println("ID");
+            { System.out.println("ID = "+yytext());
             return new Symbol(ID, yyline+1, yycolumn+1, yytext());
             }
             // fall through

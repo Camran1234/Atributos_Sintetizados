@@ -235,6 +235,7 @@ class CUP$parser$actions {
                     lista1.add(lista2.get(index));
                 }
                 finalList = lista1;
+                RESULT = lista1;
                 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("e",0, ((java_cup.runtime.Symbol)CUP$parser$stack.elementAt(CUP$parser$top-1)), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
@@ -359,7 +360,7 @@ class CUP$parser$actions {
 		int idright = ((java_cup.runtime.Symbol)CUP$parser$stack.peek()).right;
 		Object id = (Object)((java_cup.runtime.Symbol) CUP$parser$stack.peek()).value;
 		
-                System.out.print(Integer.parseInt(id.toString())+" ");
+                System.out.print(id.toString()+" ");
                 ArrayList<String> items = new ArrayList();
                 items.add(id.toString());
                 

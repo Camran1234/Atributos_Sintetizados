@@ -18,7 +18,7 @@ import static camran.atributos_sintetizados.Parser.sym.*;
     LineTerminator = \r|\n|\r\n
     WhiteSpace     = {LineTerminator} | [ \t\f]
     Numbers = [0-9]+
-    Id = [aA-zZ][(aA-zZ)|(0-9)|("$")|("_")]+
+    Id = [aA-zZ][aA-zZ|0-9|"$"|"_"]+
 %%
 
     <YYINITIAL>{
@@ -40,11 +40,11 @@ import static camran.atributos_sintetizados.Parser.sym.*;
                     }
         
         {Numbers}   {
-           System.out.println("Number");
+           System.out.println("Number "+yytext());
             return new Symbol(NUMBER, yyline + 1, yycolumn +1, yytext());
                     }
         {Id}        {
-           System.out.println("ID");
+           System.out.println("ID = "+yytext());
             return new Symbol(ID, yyline+1, yycolumn+1, yytext());
                     }
         
